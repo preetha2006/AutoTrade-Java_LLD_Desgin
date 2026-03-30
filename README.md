@@ -1,174 +1,67 @@
-AutoMarket – Car Marketplace System (Low Level Design Project)
+# AutoMarket — Car Marketplace System
 
-Overview
+## Overview
 
-AutoMarket is a Low Level Design (LLD) based Java console application that simulates a used car marketplace platform. The system allows buyers, sellers, dealers, and administrators to interact within a structured marketplace environment where vehicles can be listed, searched, negotiated, and purchased.
+AutoMarket is a console-based Java application built as a Low Level Design (LLD) project. It simulates a used car marketplace where buyers, sellers, dealers, and administrators interact within a structured environment to list, search, negotiate, and purchase vehicles.
 
-The goal of this project is to demonstrate object-oriented programming principles, modular architecture, and service-oriented design typically used in real-world software systems.
-
-The application is built as a console-based system and focuses on clear separation of responsibilities across models, services, menus, and data storage components.
+The project demonstrates object-oriented programming principles, modular architecture, and service-oriented design patterns commonly applied in production software systems.
 
 ---
 
-System Roles
+## System Roles
 
-Buyer
+**Buyer**
+Browse and filter car listings by brand, fuel type, condition, or price. View detailed car information and vehicle history. Make offers, request test drives, and communicate with sellers or dealers. Process payments and manage EMI or loan schedules. Rate sellers and dealers after transactions.
 
-- Browse all available cars
-- Search and filter cars by brand, fuel type, condition, or price
-- View detailed car information
-- View vehicle history
-- Make offers on cars
-- Request test drives
-- Send messages to sellers or dealers
-- View conversations
-- Make payments for accepted offers
-- View and pay EMI or loan schedules
-- Rate sellers or dealers
+**Seller**
+Add, update, and remove car listings. Manage inventory and review incoming offers. Accept or reject buyer offers. Record vehicle accident history and service details. Communicate directly with buyers.
 
-Seller
+**Dealer**
+Manage multiple car listings and update specifications including price, mileage, and condition. Review and respond to offers. Track inventory and communicate with buyers.
 
-- Add car listings
-- Update existing car listings
-- Remove car listings
-- Manage inventory
-- View offers received
-- Accept or reject offers
-- Add vehicle accident history and service details
-- Communicate with buyers
-
-Dealer
-
-- Manage multiple car listings
-- Update car details including price, mileage, condition, and other specifications
-- View and manage offers
-- Track inventory
-- Communicate with buyers
-
-Admin
-
-- View all registered users
-- Remove or block users
-- View all car listings
-- Remove car listings
-- Monitor all offers
-- Monitor all transactions
-- View platform summary statistics
+**Admin**
+View and manage all registered users. Remove or block accounts. Monitor all car listings, offers, and transactions. Access platform-wide summary statistics.
 
 ---
 
-Core Functionalities
+## Core Functionalities
 
-Car Listing Management
+**Car Listing Management**
+Users can create, update, and remove listings containing brand, model, year, price, mileage, fuel type, condition, and owner information.
 
-Users can add, update, and remove car listings. Each listing contains information such as:
+**Vehicle History Tracking**
+Each vehicle record stores accident history, ownership details, and last service date.
 
-- Brand
-- Model
-- Year
-- Price
-- Mileage
-- Fuel Type
-- Condition
-- Owner Information
+**Offer System**
+Buyers submit offers on active listings. Sellers and dealers review offers and accept or reject them accordingly.
 
-Vehicle History Tracking
+**Messaging System**
+Buyers communicate directly with sellers or dealers through an integrated messaging interface.
 
-Each vehicle has a history record that stores:
+**Payment System**
+Supports full cash payment, loan-based payment, and EMI-based payment. Payment records track duration, monthly installments, and completion status.
 
-- Accident history
-- Ownership details
-- Last service date
-
-Offer System
-
-Buyers can place offers on cars listed by sellers or dealers. Sellers can review and accept or reject these offers.
-
-Messaging System
-
-Buyers can communicate directly with sellers or dealers through a simple messaging system.
-
-Payment System
-
-The platform supports multiple payment methods including:
-
-- Full cash payment
-- Loan based payment
-- EMI based payment
-
-Payments track duration, monthly installments, and completion status.
-
-Admin Monitoring
-
-Administrators can monitor the platform through dashboards that display:
-
-- Total users
-- Total cars listed
-- Total offers
-- Total transactions
-- Overall platform activity
+**Admin Monitoring**
+Administrators access a dashboard displaying total users, total listings, total offers, total transactions, and overall platform activity.
 
 ---
 
-System Architecture
+## Architecture
 
-The project follows a layered architecture structure.
+The project follows a layered architecture with clear separation between models, services, menus, and storage.
 
-Models
-
-These classes represent the core entities of the system:
-
-- User
-- Buyer
-- Seller
-- Dealer
-- Car
-- Offer
-- Payment
-- Message
-- VehicleHistory
-
-Services
-
-Service classes handle the business logic of the application:
-
-- CarService
-- OfferService
-- PaymentService
-- MessageService
-- UserService
-
-Menus
-
-Menu classes implement the console based user interface for each role:
-
-- AdminMenu
-- BuyerMenu
-- SellerMenu
-- DealerMenu
-
-Storage
-
-Data is managed through an in-memory storage system:
-
-- DataStore
-
-This class acts as a central repository for users, cars, offers, payments, and messages.
+| Layer | Description |
+|---|---|
+| Models | Core entities representing domain objects |
+| Services | Business logic handlers |
+| Menus | Console-based UI for each role |
+| Storage | In-memory data store using collections |
 
 ---
 
-Technologies Used
+## Project Structure
 
-Language: Java
-Architecture: Object Oriented Design
-Design Approach: Low Level Design (LLD)
-Interface: Console Based Application
-Data Storage: In-memory storage using collections
-
----
-
-Project Structure
-
+```
 src
 ├── models
 │   ├── User.java
@@ -198,55 +91,61 @@ src
 │   └── DataStore.java
 │
 └── Main.java
+```
 
 ---
 
-How to Run the Project
+## Technologies
 
-1. Clone the repository
+| Component | Details |
+|---|---|
+| Language | Java |
+| Architecture | Object-Oriented Design |
+| Design Approach | Low Level Design (LLD) |
+| Interface | Console-based |
+| Data Storage | In-memory collections |
 
+---
+
+## Getting Started
+
+**1. Clone the repository**
+```bash
 git clone https://github.com/yourusername/AutoMarket.git
+```
 
-2. Navigate to the project directory
-
+**2. Navigate to the project directory**
+```bash
 cd AutoMarket
+```
 
-3. Compile the Java files
-
+**3. Compile**
+```bash
 javac Main.java
+```
 
-4. Run the application
-
+**4. Run**
+```bash
 java Main
+```
 
 ---
 
-Design Principles Used
-
-This project demonstrates the following software design principles:
+## Design Principles
 
 - Encapsulation
 - Separation of Concerns
 - Modular Design
 - Service Layer Architecture
-- Role Based Access Design
+- Role-Based Access Design
 
 ---
 
-Future Improvements
+## Future Enhancements
 
-Possible future enhancements include:
-
-- Database integration using MySQL or PostgreSQL
-- Web based interface using Spring Boot
-- REST API based architecture
+- Database integration with MySQL or PostgreSQL
+- Web interface using Spring Boot and REST APIs
 - Authentication and authorization system
-- Real time messaging
+- Real-time messaging
 - Payment gateway integration
-- Advanced car recommendation system
-
----
-
-Author
-
-Developed as part of a Low Level Design learning project focusing on system design, object oriented programming, and modular architecture in Java.
+- Car recommendation engine
