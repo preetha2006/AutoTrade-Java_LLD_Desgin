@@ -8,6 +8,7 @@ The goal of this project is to demonstrate object-oriented programming principle
 
 The application is built as a console-based system and focuses on clear separation of responsibilities across models, services, menus, and data storage components.
 
+---
 
 System Roles
 
@@ -54,6 +55,7 @@ Admin
 - Monitor all transactions
 - View platform summary statistics
 
+---
 
 Core Functionalities
 
@@ -106,6 +108,7 @@ Administrators can monitor the platform through dashboards that display:
 - Total transactions
 - Overall platform activity
 
+---
 
 System Architecture
 
@@ -152,6 +155,7 @@ Data is managed through an in-memory storage system:
 
 This class acts as a central repository for users, cars, offers, payments, and messages.
 
+---
 
 Technologies Used
 
@@ -161,6 +165,7 @@ Design Approach: Low Level Design (LLD)
 Interface: Console Based Application
 Data Storage: In-memory storage using collections
 
+---
 
 Project Structure
 
@@ -194,6 +199,7 @@ src
 │
 └── Main.java
 
+---
 
 How to Run the Project
 
@@ -213,6 +219,7 @@ javac Main.java
 
 java Main
 
+---
 
 Design Principles Used
 
@@ -224,6 +231,7 @@ This project demonstrates the following software design principles:
 - Service Layer Architecture
 - Role Based Access Design
 
+---
 
 Future Improvements
 
@@ -236,3 +244,9 @@ Possible future enhancements include:
 - Real time messaging
 - Payment gateway integration
 - Advanced car recommendation system
+
+---
+
+Author
+
+Developed as part of a Low Level Design learning project focusing on system design, object oriented programming, and modular architecture in Java.
